@@ -1,18 +1,241 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.custom-error-toast {
+  width: 432px !important;
+  height: 88px !important;
+  background: #EF4040 !important;
+  border-radius: 4px !important;
+  padding: 20px !important;
+  border-bottom: none !important;
+  display: flex !important;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.custom-error-toast .iziToast-body {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 48px !important;
+}
+
+.custom-error-toast .iziToast-icon {
+  margin-right: 8px;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.custom-error-toast .iziToast-message {
+  color: #FFFFFF !important;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  flex-grow: 1;
+}
+
+.custom-error-toast .iziToast-close {
+  position: absolute !important;
+  top: 32px !important;
+  right: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url('../img/error-close.svg') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  opacity: 1 !important;
+  border: none !important;
+  background-color: transparent !important;
+  cursor: pointer;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.custom-error-toast .iziToast-progressbar {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background-color: #FFBEBE !important;
+}
+
+.custom-error-toast .iziToast-progressbar>div {
+  height: 100% !important;
+  background-color: #B51B1B !important;
+  border-radius: 0;
+}
+
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  padding: 36px;
+  color: #2e2f42;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+
+  width: 272px;
+  padding: 8px 16px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #808080;
+
+  box-sizing: border-box;
+}
+
+input:hover {
+  border: 1px solid #000;
+}
+
+input:focus {
+  border: 1px solid #4e75ff;
+  color: #2e2f42;
+}
+
+button, .load-more {
+  background-color: #4e75ff;
+  border: none;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background: #6c8cff;
+}
+
+/* Loader */
+.loader {
+  display: block;
+  margin: 20px auto;
+  border: 4px solid #ccc;
+  border-top-color: #4e75ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 24px;
+  margin: 0 auto;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  max-width: calc(3 * 360px + 2 * 24px);
+}
+
+.gallery-item {
+  width: 360px;
+  height: 200px;
+  border: 1px solid #808080;
+
+  background-color: white;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.gallery-item a {
+  display: block;
+  flex-grow: 1;
+  height: calc(100% - 48px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  height: 48px;
+  padding: 4px 25px 4px 20px;
+
+  background-color: #fff;
+
+  font-size: 12px;
+  line-height: 170%;
+  letter-spacing: 0.04em;
+
+  box-sizing: border-box;
+}
+
+.controls{
+  display: flex;
+  justify-content: center;
+  margin: 32px auto 44px auto;
+}
+
+.load-more{
+  width: 125px;
+}
