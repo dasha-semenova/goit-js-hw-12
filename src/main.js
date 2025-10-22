@@ -84,6 +84,7 @@ async function onSearch(event) {
     }
 
     createGallery(data.hits);
+    input.value = "";
 
     loadedHits += data.hits.length;
 
@@ -103,7 +104,6 @@ async function onSearch(event) {
     });
   } finally {
     hideLoader();
-    input.value = "";
   }
 }
 
